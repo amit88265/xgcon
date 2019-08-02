@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getAllSideTabs } from './store/actions/sideTabActions';
 import './App.css';
+import Dashboard from './container/Dashboard';
 
-function App() {
+class App extends Component {
 
-  return (
-    <div className="App">
-    
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.props.getAllTabs();
+  }
+
+  render() {
+    return (
+      <Dashboard drawerTabs={this.props.sideDrawer}/>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    sideDrawer: state.sideTab.tabs,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getAllTabs: () => dispatch(getAllSideTabs())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
