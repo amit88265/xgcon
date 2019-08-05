@@ -8,21 +8,7 @@ class Dashboard extends Component {
     }
     render() {
         return ( 
-            <div>
-                 <div>
-                {
-                    this.props.drawerTabs.map((tab,index)=>{
-                        <div>{tab.split(" ").join("")}</div>
-                    })
-                }
-            </div>
-            {
-                this.props.drawerTabs.map((tab,index)=>{
-                    if(tab==drawerTabs)
-                    return 
-                })
-            }
-            </div>
+           <div></div>
            
          );
     }

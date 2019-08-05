@@ -1,0 +1,92 @@
+.rootTournament{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chooseSport {
+    min-width: 100px;
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 25px;
+    border: 1px solid blue;
+    background: white;
+    border-radius: 2px;
+    font-weight: 400;
+    color: blue;
+}
+
+
+.tournamentBodyElements{
+    margin-top: 5px;
+    height: 28px; 
+    display: flex;
+    
+}
+.tournamentBodyElements>:nth-child(1){
+    color: blue;
+    padding-top: 9px;
+}
+
+.tournamentBodyElements>:nth-child(2){
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.tournamentBodyElements>input{
+    border: none;
+    border-bottom: 1px solid blue;
+}
+.tournamentBodyElements>input:active,.tournamentBodyElements>input:focus{
+    outline-style: none;
+}
+
+
+.btnSubmitTournament{
+    display: block;
+    background: rgb(255, 255, 255);
+    border: 1px solid blue;
+    border-radius: 2px;
+    width: 80px;
+    height: 25px;
+    color: blue;
+    font-weight: 300;
+    transition: 0.5s;
+    margin-top: 8px;
+}
+.btnSubmitTournament:active{
+    background: blue;
+    color: white;
+}
+.btnSubmitTournament:active,.btnSubmitTournament:focus{
+    outline-style: none; 
+}
+
+.dateChooser{
+    padding-top: 9px;
+}
+
+.btnAddTeam,.btnAddVenue{
+    display: block;
+    background: rgb(255, 255, 255);
+    border: 1px solid blue;
+    border-radius: 2px;
+    width: 80px;
+    height: 25px;
+    color: blue;
+    font-weight: 300;
+    transition: 0.5s;
+    margin-top: 8px;
+    margin-left: 10px;
+
+}
+
+.btnAddTeam:active,.btnAddVenue:active,.btnAddTeam:focus,.btnAddVenue:focus{
+    outline-style: none;
+}
+
+.btnAddTeam:active,.btnAddVenue:active{
+    background: blue;
+    color: white;
+}
