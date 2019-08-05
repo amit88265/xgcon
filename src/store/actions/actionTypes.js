@@ -1,0 +1,18 @@
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const AUTH_FAIL = 'AUTH_FAIL';
+export const AUTH_SET_REDIRECT = 'AUTH_SET_REDIRECT';
+
+export const ADD_MATCH = 'ADD_MATCH';
+export const MATCH_REQUEST_FAILED = 'MATCH_REQUEST_FAILED';
+export const MATCH_SELECTED = 'MATCH_SELECTED';
+export const MATCH_DESELECTED = 'MATCH_DESELECTED';
+
+export const SET_PLAYER_DATA = 'SET_PLAYER_DATA';
+export const SELECT_PLAYER = 'SELECT_PLAYER';
+export const CHANGE_PLAYER_TYPE = 'CHANGE_PLAYER_TYPE';
+
+export const GET_PROFILE = 'GET_PROFILE';
+export const SET_PROFILE = 'SET_PROFILE';
+export const EDIT_TOGGLE = 'EDIT_TOGGLE';
+export const EDIT_PROFILE = 'EDIT_PROFILE';

@@ -1,33 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getAllSideTabs } from './store/actions/sideTabActions';
-import './App.css';
-import Dashboard from './container/Dashboard';
+import React from 'react';
+import Layout from './hoc/Layout/Layout';
+import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
+import Auth from './container/Auth/Auth';
+import Dashboard from './hoc/Dashboard/Dashboard';
 
-class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.props.getAllTabs();
-  }
-
+class App extends React.Component {
   render() {
     return (
-      <Dashboard drawerTabs={this.props.sideDrawer}/>
+          <Layout {...this.props}>            
+            <Switch>
+              <Route path="/auth" component={Auth}/>
+              <Route path="/" component={Dashboard} />
+              <Redirect to="/" />
+            </Switch>
+          </Layout>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    sideDrawer: state.sideTab.tabs,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getAllTabs: () => dispatch(getAllSideTabs())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(App);

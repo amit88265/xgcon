@@ -1,11 +1,11 @@
 const initialState = {
-    tabs: ['Create Sport', 'Create tournament', 'Create Match', 'Create Teams']
+    tabs: ['Create Sport', 'Create tournament', 'Create Match', 'Create Team', 'Create Player','Score Updates','Edit'],
+    routes: ['sport', 'tournament', 'match', 'team', 'player', 'score', 'edit'],
 }
 
 const sideTabReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'GET_SIDE_TABS': return [...state]
-
+        
         default: return state;
     }
 }

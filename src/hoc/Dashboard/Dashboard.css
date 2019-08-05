@@ -1,0 +1,24 @@
+.dashboard{
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.sideDrawer{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+}
+
+.feedInfoContainer{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.drawerTabs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.drawerTab{
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid rgb(89, 14, 104);
+}
+
+.tabLabel{
+    text-decoration: none;
+    color: black;
+}
