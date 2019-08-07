@@ -35,6 +35,7 @@ class Tournaments extends Component {
         const updatedFormElement = { 
             ...updatedForm[inputIdentifier]
         };
+        
         updatedFormElement.value = event.target.value;
         //updatedFormElement.valid = checkValidity(updatedFormElement.value, updatedFormElement.validation);
         updatedFormElement.touched = true;

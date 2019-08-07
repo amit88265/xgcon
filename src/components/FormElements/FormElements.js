@@ -4,6 +4,7 @@ import Inputs from '../Inputs/Inputs';
 const FormElements = (props) => {
     const { inputs } = props;
     return (
+        
         Object.keys(inputs).map(input => (
             <Inputs {...inputs[input].elementConfig}
                 key={input}
