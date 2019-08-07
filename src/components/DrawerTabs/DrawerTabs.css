@@ -8,10 +8,26 @@
     text-align: center;
     line-height: 40px;
     height: 40px;
-    border: 1px solid rgb(89, 14, 104);
+    border-bottom: 1px solid #ccc;
+}
+
+.drawerTab:hover{
+    border: 1px solid #999;
 }
 
 .tabLabel{
     text-decoration: none;
     color: black;
+    text-decoration: none;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.tabLabel:hover{
+    color: white;
+    background-color: #5061c0; 
+}
+
+.activeTabLabel{
+    color: white;
+    background-color: #5061c0;  
 }

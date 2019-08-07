@@ -1,0 +1,29 @@
+.inputBox{
+    min-width: 300px;
+    margin: 5px 0;
+}
+
+select{
+    margin: 3px 2px;
+    cursor: pointer;
+}
+
+.inputLabel{
+    color: #666;
+    margin: 3px 2px;
+}
+
+input, input:focus{
+    margin: 5px 2px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.addItemButton{
+    border: 1px solid blue;
+    color: black;
+    width: 50px;
+    border-radius: 2px;
+    cursor: pointer;
+}
