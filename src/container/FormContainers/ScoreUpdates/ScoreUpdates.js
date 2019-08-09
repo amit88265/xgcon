@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { tournament } from '../../../store/utility/stateData';
+import { score } from '../../../store/utility/scoresData';
 import FormElements from '../../../components/FormElements/FormElements';
 import Button from '@material-ui/core/Button';
 import { inputChangedHandler, addSelectOptionsHandler, formSubmitHandler } from '../../../store/actions/formDataAddActions';
 import '../FormContainers.css';
 
-class Tournaments extends Component {
+class ScoreUpdate extends Component {
     constructor() {
         super();
-        this.state = tournament;
+        this.state = score;
     }
 
     formInputHandler = (event, inputIdentifier) => {
-        const { updatedForm, formIsValid } = inputChangedHandler(event, this.state.tournamentData, inputIdentifier);
-        this.setState({ tournamentData: updatedForm, formIsValid });
+        const { updatedForm, formIsValid } = inputChangedHandler(event, this.state.scoreData, inputIdentifier);
+        this.setState({ scoreData: updatedForm, formIsValid });
     }
 
     addOptionsHandler(inputIdentifier) {
-        const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.tournamentData, inputIdentifier);
-        this.setState({ tournamentData: updatedForm, formIsValid });
+        const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.scoreData, inputIdentifier);
+        this.setState({ scoreData: updatedForm, formIsValid });
     }
 
     render() {
@@ -26,7 +26,7 @@ class Tournaments extends Component {
             <div className='formContainer'>
                 <form onSubmit={formSubmitHandler}>
                     <FormElements
-                        inputs={this.state.tournamentData}
+                        inputs={this.state.scoreData}
                         changeHandler={this.formInputHandler}
                         addSelectHandler={this.addOptionsHandler}
                     />
@@ -34,7 +34,7 @@ class Tournaments extends Component {
                         value='Submit'
                         color='primary'
                         variant='outlined'>
-                        ADD TOURNAMENT
+                        SEND SCORE
                     </Button>
                 </form>
             </div>
@@ -43,4 +43,4 @@ class Tournaments extends Component {
     }
 }
 
-export default Tournaments;
+export default ScoreUpdate;

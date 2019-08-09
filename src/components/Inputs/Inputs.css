@@ -6,24 +6,35 @@
 select{
     margin: 3px 2px;
     cursor: pointer;
+    background-color: white;
+    height: 20px;
 }
 
 .inputLabel{
     color: #666;
     margin: 3px 2px;
+    display: inline-block;
+    width: 200px;
 }
 
-input, input:focus{
+input{
     margin: 5px 2px;
     width: 200px;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 5px;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid #5061c0;
 }
 
 .addItemButton{
     border: 1px solid blue;
     color: black;
     width: 50px;
+    background-color: white;
     border-radius: 2px;
     cursor: pointer;
+    height: 20px;
 }

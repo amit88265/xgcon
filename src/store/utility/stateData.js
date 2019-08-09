@@ -1,22 +1,5 @@
 // This file contains inputs required at a particular page.
-const sportSelector = {
-    elementType: 'select',
-    elementConfig: {
-        options: [
-            { value: 'Cricket', label: 'Cricket' },
-            { value: 'Table Tennis', label: 'Table Tennis' },
-            { value: 'FoosBall', label: 'FoosBall' },
-            { value: 'Carrom', label: 'Carrom' },
-        ]
-    },
-    value: '',
-    label: 'Select Sports',
-    validation: {
-        required: true
-    },
-    valid: false,
-    touched: false
-};
+import {sportSelector} from './sportsData';
 
 const tournamentName = {
     elementType: 'input',
@@ -160,29 +143,4 @@ export const tournament = {
     formIsValid: false
 }
 
-export const match = {
-    sport: null,
-    tournament: null,
-    editMatchId: null,
-    inputs: {}
-}
 
-export const team = {
-    sport: null,
-    tournament: null,
-    match: null,
-    editTeamId: null,
-    inputs: {}
-}
-
-export const player = {
-    playerId: null,
-    inputs: {}
-}
-
-export const scores = {
-    sport: null,
-    tournament: null,
-    match: null,
-    inputs: {},
-}

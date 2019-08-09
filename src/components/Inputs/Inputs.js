@@ -10,7 +10,9 @@ const Inputs = (props) => {
                     onChange={(event)=>props.changeHandler(event, props.uniqueId)}>
                 {props.options.map(option => (
                     <option key={option.value}
-                            value={option.value}>
+                            value={option.value}
+                            disabled={!!option.disabled}
+                            selected={!!option.selected}>
                         {option.label}
                     </option>
                 ))

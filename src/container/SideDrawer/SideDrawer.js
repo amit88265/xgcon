@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DrawerTabs from '../../components/DrawerTabs/DrawerTabs';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'; 
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {connect} from 'react-redux';
 
 class SideDrawer extends Component {
@@ -7,8 +9,14 @@ class SideDrawer extends Component {
         const {tabs, routes} = this.props;
 
         return (
-            <DrawerTabs tabsList={tabs}
+            <div>
+                    <div className='sideDrawerTop'>
+                        <h3>XGCON</h3>
+                    </div>
+                    <DrawerTabs tabsList={tabs}
                         routes={routes}/>
+            </div>
+
         );
     }
 }

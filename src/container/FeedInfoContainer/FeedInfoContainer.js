@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
 import Tournaments from '../FormContainers/Tournaments/Tournaments';
+import Matches from '../FormContainers/Matches/Matches';
+import Teams from '../FormContainers/Teams/Teams';
+import Players from '../FormContainers/Players/Players';
+// import ScoreUpdate from '../FormContainers/ScoreUpdates/ScoreUpdates';
 
 class FeedInfoContainer extends Component {
 
     render() {
         return (
             <Switch>
-                <Route path='/sport' render={()=>(<div>Hello please fill in details for sports.</div>)}/>
+                <Route path='/sport' render={()=> <div>Score data</div>}/>
                 <Route path='/tournament' component={Tournaments}/>
-                <Route path='/match' render={()=>(<div>Hello please fill in details for match.</div>)}/>
-                <Route path='/team' render={()=>(<div>Hello please fill in details for team.</div>)}/>
-                <Route path='/player' render={()=>(<div>Hello please fill in details for player.</div>)}/>
-                <Route path='/score' render={()=>(<div>Hello please fill in details for scores.</div>)}/>
+                <Route path='/match' component={Matches}/>
+                <Route path='/team' component={Teams}/>
+                <Route path='/player' component={Players}/>
+                <Route path='/score' render={()=><div>Score data</div>}/>
             </Switch>
         );
     }
