@@ -1,15 +1,66 @@
-#GuestBtn{
+#GuestBtn {
     display: block;
     width: 220px;
     height: 40px;
     margin: 15px auto;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
     background: rgb(226, 218, 218);
-    color:rgb(75, 71, 71);
+    color: rgb(75, 71, 71);
     border-radius: 2px;
     font-weight: 500px;
     padding: 8px 16px;
     line-height: normal;
     font-size: 14px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.authRoot {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    background: rgb(231, 226, 226);
+}
+
+.authBody{
+    width: 40%;
+    padding-top: 50px;
+    margin: auto;
+    padding-left: 10%;
+}
+
+.authButton {
+    border: 1px solid blue;
+    background: white;
+    color: black;
+    border-radius: 3px;
+    width: 70px;
+    margin-left: 5px;
+    margin-top: 5px;
+    transition: 0.5s;
+    height: 25px;
+}
+
+.authButton:hover {
+    background: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.authButton:active {
+    background: white;
+    color: blue;
+    font-weight: bold;
+}
+
+.authInputBox{
+    color: black;
+    border: none;
+}
+
+.authInputBox:active,.authInputBox:focus{
+    outline: none;
+}
+.authTag{
+    color: red;
+    font-size: 3rem;
 }
