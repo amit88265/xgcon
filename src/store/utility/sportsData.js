@@ -20,10 +20,11 @@ export const sportSelector = {
     elementType: 'select',
     elementConfig: {
         options: [
-            { value: 'Cricket', label: 'Cricket' },
-            { value: 'Table Tennis', label: 'Table Tennis' },
-            { value: 'FoosBall', label: 'FoosBall' },
-            { value: 'Carrom', label: 'Carrom' },
+            { value: '', label: '--SPORT--' },
+            { value: 'Cricket', label: 'CRICKET' },
+            { value: 'TableTennis', label: 'TABLE TENNIS' },
+            { value: 'FoosBall', label: 'FOOS BALL' },
+            { value: 'Carrom', label: 'CARROM' },
         ]
     },
     value: '',
@@ -36,10 +37,10 @@ export const sportSelector = {
 };
 
 export const matchSelector = input('select', '', 'Select Match', '', [
-    { value: '', label: '--MATCH ID--', disabled: true, selected: true }
+    { value: '', label: '--MATCH--', disabled: true, selected: true }
 ]);
 
 export const tournamentSelector = input('select', '', 'Select Tournament', '', [
-    { value: '', label: '--TOURNAMENT ID--', disabled: true, selected: true}
+    { value: '', label: '--TOURNAMENT--', disabled: true, selected: true}
 ]);
 

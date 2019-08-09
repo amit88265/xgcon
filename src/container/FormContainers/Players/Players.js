@@ -16,7 +16,7 @@ class Players extends Component {
         this.setState({ playerData: updatedForm, formIsValid });
     }
 
-    addOptionsHandler(inputIdentifier) {
+    addOptionsHandler = (inputIdentifier) => {
         const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.playerData, inputIdentifier);
         this.setState({ playerData: updatedForm, formIsValid });
     }

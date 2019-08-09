@@ -1,0 +1,22 @@
+.sideDrawerTop{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.menuIcon{
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+    .sideDrawerTop h3{
+        display: inline;
+        min-width: 100px; 
+    }
+
+    .menuIcon{
+        display: initial;
+    }
+}

@@ -3,6 +3,7 @@ import DrawerTabs from '../../components/DrawerTabs/DrawerTabs';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'; 
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {connect} from 'react-redux';
+import './SideDrawer.css';
 
 class SideDrawer extends Component {
     render() {
@@ -12,6 +13,7 @@ class SideDrawer extends Component {
             <div>
                     <div className='sideDrawerTop'>
                         <h3>XGCON</h3>
+                        <FontAwesomeIcon icon={faBars} className='menuIcon'/>
                     </div>
                     <DrawerTabs tabsList={tabs}
                         routes={routes}/>

@@ -1,11 +1,11 @@
-import {sportSelector, tournamentSelector, input} from './sportsData';
+import {sportSelector, tournamentSelector, matchSelector, input} from './sportsData';
 
 export const match = {
     matchData: {
         sportSelector,
         tournamentSelector,
-        matchId: input('input', 'text','Match ID', 'AZXDQ',),
-        matchType: input('select','', 'Match Type', '', [{value:'', label:'--MATCH TYPE--'}, {value:'ODI', label:'ODI'}, {value:'T20', label:'T20'}, {value:'OTHER', label:'OTHER'}]),
+        matchSelector,
+        matchType: input('select','', 'Match Type', '', [{value:'', label:'--TYPE--'}, {value:'ODI', label:'ODI'}, {value:'T20', label:'T20'}, {value:'OTHER', label:'OTHER'}]),
         date: input('calendar', 'date', 'Match Date'),
         time: input('calendar', 'time', 'Match Timings'),
         venue: input('select', '', 'Venue', '', [{value:'', label: '--VENUE--'}]),

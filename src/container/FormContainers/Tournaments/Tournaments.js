@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { tournament } from '../../../store/utility/stateData';
+import { tournament } from '../../../store/utility/tournamentData';
 import FormElements from '../../../components/FormElements/FormElements';
 import Button from '@material-ui/core/Button';
 import { inputChangedHandler, addSelectOptionsHandler, formSubmitHandler } from '../../../store/actions/formDataAddActions';
@@ -16,7 +16,7 @@ class Tournaments extends Component {
         this.setState({ tournamentData: updatedForm, formIsValid });
     }
 
-    addOptionsHandler(inputIdentifier) {
+    addOptionsHandler = (inputIdentifier) => {
         const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.tournamentData, inputIdentifier);
         this.setState({ tournamentData: updatedForm, formIsValid });
     }

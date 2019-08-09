@@ -16,7 +16,7 @@ class Teams extends Component {
         this.setState({ teamData: updatedForm, formIsValid });
     }
 
-    addOptionsHandler(inputIdentifier) {
+    addOptionsHandler = (inputIdentifier) => {
         const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.teamData, inputIdentifier);
         this.setState({ teamData: updatedForm, formIsValid });
     }

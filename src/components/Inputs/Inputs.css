@@ -17,10 +17,10 @@ select{
     width: 200px;
 }
 
-input{
+input, textarea{
     margin: 5px 2px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 5px;
 }
 
@@ -37,4 +37,14 @@ input:focus{
     border-radius: 2px;
     cursor: pointer;
     height: 20px;
+}
+
+@media screen and (max-width: 500px){
+    .inputBox{
+        width: 80%;
+    }
+    
+    .inputLabel{
+        display: block;
+    }
 }

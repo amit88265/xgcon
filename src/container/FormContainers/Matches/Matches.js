@@ -16,7 +16,7 @@ class Matches extends Component {
         this.setState({ matchData: updatedForm, formIsValid });
     }
 
-    addOptionsHandler(inputIdentifier) {
+    addOptionsHandler = (inputIdentifier) => {
         const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.matchData, inputIdentifier);
         this.setState({ matchData: updatedForm, formIsValid });
     }

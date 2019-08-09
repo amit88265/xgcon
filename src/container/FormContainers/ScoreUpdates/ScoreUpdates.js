@@ -16,7 +16,7 @@ class ScoreUpdate extends Component {
         this.setState({ scoreData: updatedForm, formIsValid });
     }
 
-    addOptionsHandler(inputIdentifier) {
+    addOptionsHandler = (inputIdentifier) => {
         const { updatedForm, formIsValid } = addSelectOptionsHandler(this.state.scoreData, inputIdentifier);
         this.setState({ scoreData: updatedForm, formIsValid });
     }

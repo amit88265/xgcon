@@ -4,19 +4,19 @@ import Tournaments from '../FormContainers/Tournaments/Tournaments';
 import Matches from '../FormContainers/Matches/Matches';
 import Teams from '../FormContainers/Teams/Teams';
 import Players from '../FormContainers/Players/Players';
-// import ScoreUpdate from '../FormContainers/ScoreUpdates/ScoreUpdates';
+import ScoreUpdate from '../FormContainers/ScoreUpdates/ScoreUpdates';
 
 class FeedInfoContainer extends Component {
 
     render() {
         return (
             <Switch>
-                <Route path='/sport' render={()=> <div>Score data</div>}/>
+                <Route path='/sport' component={()=> <div>Add Sport data</div>}/>
                 <Route path='/tournament' component={Tournaments}/>
                 <Route path='/match' component={Matches}/>
                 <Route path='/team' component={Teams}/>
                 <Route path='/player' component={Players}/>
-                <Route path='/score' render={()=><div>Score data</div>}/>
+                <Route path='/score' component={ScoreUpdate}/>
             </Switch>
         );
     }
