@@ -12,15 +12,14 @@ const Inputs = (props) => {
                     <option key={option.value}
                             value={option.value}>
                         {option.label}
-                    </option>
-                ))
+                    </option>))
                 }
             </select>
         );
             break;
 
         case 'input': input = (
-            <input type={props.type}
+            <input className={props.styleClassName} type={props.type}
                 placeholder={props.placeholder}
                 value={props.value}
                 onChange={(event)=>props.changeHandler(event, props.uniqueId)} />
@@ -70,7 +69,7 @@ const Inputs = (props) => {
 
     return (
         <div className='inputBox'>
-            <label className='inputLabel'>
+            <label className={props.styleClassName}>
                 {props.label}:
             </label>
             {input}
