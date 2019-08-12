@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { score } from '../../../store/utility/scoresData';
 import FormElements from '../../../components/FormElements/FormElements';
 import Button from '@material-ui/core/Button';
-import { inputChangedHandler, addSelectOptionsHandler, formSubmitHandler } from '../../../store/actions/formDataAddActions';
+import { inputChangedHandler, addSelectOptionsHandler, submitFormData } from '../../../store/actions/formDataAddActions';
 import '../FormContainers.css';
 
 class ScoreUpdate extends Component {
@@ -21,10 +21,16 @@ class ScoreUpdate extends Component {
         this.setState({ scoreData: updatedForm, formIsValid });
     }
 
+    submitForm = (event)=>{
+        event.preventDefault();
+        const {sportSelector, matchSelector, ...data} = this.state.scoreData; 
+        submitFormData(sportSelector.value, 'matches', 'match'+ data.date.value ,data);
+    }    
+
     render() {
         return (
             <div className='formContainer'>
-                <form onSubmit={formSubmitHandler}>
+                <form onSubmit={this.submitForm}>
                     <FormElements
                         inputs={this.state.scoreData}
                         changeHandler={this.formInputHandler}

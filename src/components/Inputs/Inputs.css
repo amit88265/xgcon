@@ -1,13 +1,23 @@
 .inputBox{
     min-width: 300px;
     margin: 5px 0;
+    display: flex;
+    align-items: center;
 }
 
 select{
     margin: 3px 2px;
     cursor: pointer;
     background-color: white;
-    height: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 30px;
+    color: black;
+}
+
+select>option:first-child{
+    color: #666;
 }
 
 .inputLabel{
@@ -15,13 +25,17 @@ select{
     margin: 3px 2px;
     display: inline-block;
     width: 200px;
+    height: 30px;
+    line-height: 30px;
 }
 
 input, textarea{
     margin: 5px 2px;
     width: 200px;
     border-radius: 5px;
+    box-sizing: border-box;
     padding: 5px;
+    height: 30px;
 }
 
 input:focus{
@@ -42,9 +56,6 @@ input:focus{
 @media screen and (max-width: 500px){
     .inputBox{
         width: 80%;
-    }
-    
-    .inputLabel{
-        display: block;
+        flex-direction: column;
     }
 }

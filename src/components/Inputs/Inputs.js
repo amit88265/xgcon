@@ -21,7 +21,7 @@ const Inputs = (props) => {
             break;
 
         case 'input': input = (
-            <input className={props.styleClassName} type={props.type}
+            <input type={props.type}
                 placeholder={props.placeholder}
                 value={props.value}
                 onChange={(event)=>props.changeHandler(event, props.uniqueId)} />
@@ -71,7 +71,7 @@ const Inputs = (props) => {
 
     return (
         <div className='inputBox'>
-            <label className={props.styleClassName}>
+            <label className={'inputLabel '+props.styleClassName}>
                 {props.label}:
             </label>
             {input}

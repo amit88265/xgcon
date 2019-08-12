@@ -1,59 +1,90 @@
 import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { uiConfig } from './firebaseConfig';
-import { connect } from 'react-redux';
-import * as actions from '../../store/actions/authActions';
+import Inputs from '../../components/Inputs/Inputs';
+import Button from '../../components/Inputs/Button';
+import {auth} from '../../store/actions/authActions'; 
+import {connect} from 'react-redux';
 import './Auth.css';
 
 class Auth extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            open: true,
-        };
+        this.state={
+            userId: '',
+            password: ''
+        }
+    }
+    
+    authHandler = (e, uniqueID) => {
+        
+        switch (uniqueID) {
+            case 'userID':
+                this.setState({userId: e.target.value});
+                break;
+            case 'password':
+                this.setState({password: e.target.value});
+                break;
+            default: break;
+        }
     }
 
-    handleClose = () => {
-        this.setState({ open: false });
-        this.props.history.goBack();
+    componentDidMount(){
+        if(this.props.isSigned){
+            this.props.history.push('/');
+        }
+    }
+
+    componentDidUpdate(){
+        if(this.props.isSigned){
+            this.props.history.push('/');
+        }
     }
 
     render() {
+        const {userId, password} = this.state;
+
         return (
-            <div>
-                <Dialog
-                    open={!this.props.isSigned && this.state.open}
-                    onClose={this.handleClose}
-                    aria-labelledby="login-dialog"
-                    aria-describedby="login-dialog-description">
-
-                    <DialogTitle id="login-dialog">{"LOG IN"}</DialogTitle>
-
-                    <DialogContent>
-                        <StyledFirebaseAuth uiConfig={uiConfig}
-                            firebaseAuth={firebase.auth()} />
-                    </DialogContent>
-                </Dialog>
+            <div className="authRoot">
+                <div className="authBody">
+                    <div className="authTag">
+                        {this.props.message}
+                    </div>
+                    <Inputs styleClassName="authInputBox" 
+                            elementType="input" 
+                            type="text" 
+                            placeholder="Enter your username"
+                            changeHandler={this.authHandler} 
+                            uniqueId="userID" 
+                            label="User Id"
+                            value={userId} />
+                    <Inputs styleClassName="authInputBox" 
+                            elementType="input" 
+                            type="password" 
+                            placeholder="Enter Password"
+                            changeHandler={this.authHandler} 
+                            uniqueId="password" 
+                            label="Password"
+                            value={password} />
+                    <Button styleClassName="authButton" 
+                            clickHandler={()=> this.props.onLogin(userId, password)}
+                            label="SignIn" />
+                </div>
             </div>
+
         );
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state =>{
     return {
+        message: state.auth.message,
         isSigned: !!state.auth.user,
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch =>{
     return {
-        onLoginComplete: () => dispatch(actions.authSuccess())
+        onLogin: (userId, password)=> dispatch(auth(userId, password)),
     }
 }
 

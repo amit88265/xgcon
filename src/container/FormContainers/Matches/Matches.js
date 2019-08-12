@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { match } from '../../../store/utility/matchData';
 import FormElements from '../../../components/FormElements/FormElements';
 import Button from '@material-ui/core/Button';
-import { inputChangedHandler, addSelectOptionsHandler, formSubmitHandler } from '../../../store/actions/formDataAddActions';
+import { inputChangedHandler, addSelectOptionsHandler, submitFormData } from '../../../store/actions/formDataAddActions';
 import '../FormContainers.css';
 
 class Matches extends Component {
@@ -21,10 +21,17 @@ class Matches extends Component {
         this.setState({ matchData: updatedForm, formIsValid });
     }
 
+    submitForm = (event)=>{
+        event.preventDefault();
+        const {sportSelector, matchSelector, ...data} = this.state.matchData;
+        const uniqueId = new Date(data.date.value).toDateString() + data.time.value; 
+        submitFormData(sportSelector.value, 'matches', uniqueId ,data);
+    }    
+
     render() {
         return (
             <div className='formContainer'>
-                <form onSubmit={formSubmitHandler}>
+                <form onSubmit={this.submitForm}>
                     <FormElements
                         inputs={this.state.matchData}
                         changeHandler={this.formInputHandler}

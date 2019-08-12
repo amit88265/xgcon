@@ -36,11 +36,47 @@ export const sportSelector = {
     touched: false
 };
 
-export const matchSelector = input('select', '', 'Select Match', '', [
+export const matchSelector = input('select', '', 'Edit Match', '', [
     { value: '', label: '--MATCH--', disabled: true, selected: true }
 ]);
 
-export const tournamentSelector = input('select', '', 'Select Tournament', '', [
+export const tournamentSelector = input('select', '', 'Edit Tournament', '', [
     { value: '', label: '--TOURNAMENT--', disabled: true, selected: true}
 ]);
 
+export const sports = {
+    sportsData: {
+        sports: { ...sportSelector, elementType: 'list' },
+        rulebook: {
+            elementType: 'textArea',
+            elementConfig: {
+                type: 'textArea',
+                placeholder: 'Enter Rules'
+            },
+            value: '',
+            label: 'Rule Book',
+            validation: {
+                required: false
+            },
+            valid: false,
+            touched: false
+        },
+        routes: {
+            elementType: 'list',
+            elementConfig: {
+                options: [
+                    { value: '', label: '--TEAMS--' },
+                ]
+            },
+            label: 'Participating Teams',
+            value: '',
+            validation: {
+                required: false
+            },
+            valid: true,
+            touched: false
+        },
+        // scoreUpdateRequirements: {}
+    },
+    formIsValid: false
+}

@@ -7,11 +7,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 2px 4px #ccc;
+    box-shadow: 0 0 15px 5px #ccc;
 }
 
 div .logo{
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .navLink{

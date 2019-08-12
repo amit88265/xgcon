@@ -2,21 +2,13 @@ import React, { Component, Fragment } from 'react';
 import Header from '../../components/HeaderFooter/Header';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/authActions';
-import firebase from '../../store/utility/firebaseConfig';
 import './Layout.css';
  
 class Layout extends Component {
 
     constructor(props){
         super(props);
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // User is signed in.
-                console.log("User is Authenticated");
-                props.onLogin();
-                this.redirectUser();
-            }
-        });
+        props.authenticate();
     }
 
     redirectUser = (redirectTo = this.props.redirectTo)=>{
@@ -31,11 +23,10 @@ class Layout extends Component {
 
     render() {
 
-        const {isSigned, userDetails, children} = this.props;
+        const {isSigned, children} = this.props;
         return (
             <Fragment>
                 <Header isSigned={isSigned} 
-                userImage={!!userDetails?userDetails.photoURL:''} 
                 onLogout={this.logoutUser}
                 history={this.props.history}/>
                 <main>
@@ -49,14 +40,14 @@ class Layout extends Component {
 const mapStateToProps = state =>{
     return {
         isSigned: !!state.auth.user,
-        userDetails: state.auth.user,
+        userId: state.auth.user,
         redirectTo: state.auth.redirectTo
     }
 }
 
 const mapDispatchToProps = dispatch=>{
     return {
-        onLogin: ()=>dispatch(actions.authStart()),
+        authenticate: ()=>dispatch(actions.authStart()),
         onLogoutUser: ()=>dispatch(actions.authLogout())
     }
 }

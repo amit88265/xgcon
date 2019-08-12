@@ -1,8 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Avatar } from '@material-ui/core';
-import HeaderMenu from './HeaderMenu/HeaderMenu';
 import {NavLink} from 'react-router-dom';
 import './HeaderFooter.css';
 
@@ -18,9 +16,13 @@ const Header = (props) => {
     );
 
     const avatar = (
-            <HeaderMenu onLogout={props.onLogout}>
-                <Avatar src={props.userImage} />
-            </HeaderMenu>
+        <NavLink to='/auth' className='navLink'>
+            <Button variant='outlined'
+                    color='inherit'
+                    onClick={props.onLogout}>
+                Logout
+            </Button>
+        </NavLink>
     );
 
     return (

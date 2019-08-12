@@ -1,5 +1,5 @@
 // This file contains inputs required at a particular page.
-import {sportSelector} from './sportsData';
+import {sportSelector, tournamentSelector} from './sportsData';
 
 const tournamentName = {
     elementType: 'input',
@@ -34,7 +34,6 @@ const venues = {
     elementConfig: {
         options: [
             { value: '', label: '--VENUES--' },
-            { value: 'Xebia', label: 'Xebia' },
         ],
         placeholder: 'Enter Venue'
     },
@@ -65,47 +64,11 @@ const participatingTeams = {
     touched: false
 };
 
-export const sports = {
-    sportsData: {
-        sports: { ...sportSelector, elementType: 'list' },
-        rulebook: {
-            elementType: 'textArea',
-            elementConfig: {
-                type: 'textArea',
-                placeholder: 'Enter Rules'
-            },
-            value: '',
-            label: 'Rule Book',
-            validation: {
-                required: false
-            },
-            valid: false,
-            touched: false
-        },
-        routes: {
-            elementType: 'list',
-            elementConfig: {
-                options: [
-                    { value: '', label: '--TEAMS--' },
-                ]
-            },
-            label: 'Participating Teams',
-            value: '',
-            validation: {
-                required: false
-            },
-            valid: true,
-            touched: false
-        },
-        scoreUpdateRequirements: {}
-    },
-    formIsValid: false
-}
-
 export const tournament = {
 
     tournamentData: {
-        sports: sportSelector,
+        sportSelector,
+        tournamentSelector,
         tournament: tournamentName,
         format: {
             elementType: 'input',

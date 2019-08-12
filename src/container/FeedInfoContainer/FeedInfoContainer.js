@@ -17,6 +17,7 @@ class FeedInfoContainer extends Component {
                 <Route path='/team' component={Teams}/>
                 <Route path='/player' component={Players}/>
                 <Route path='/score' component={ScoreUpdate}/>
+                <Route path='/' exact render={()=> (<div>Welcome to XGCON, you can continue to add data.</div>)}/>
             </Switch>
         );
     }
